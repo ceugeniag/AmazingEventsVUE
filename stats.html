@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" href="./image/Logo Amazing Events.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <title>Amazing Events - Stats</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="./image/Logo Amazing Events.png" alt="logo" width="100">
+            <div class="navBar">
+                <a href="./index.html">Home</a>
+                <a href="./upComingEvents.html">Upcoming Events</a>
+                <a href="./pastEvents.html">Past Events</a>
+                <a href="./contact.html">Contact</a>
+                <a href="#">Stats</a>
+            </div>
+        </nav>
+        <h1 class="d-flex justify-content-center p-5">Stats</h1>
+    </header>
+    <main class="mainStats">
+        <div id="app">
+            <div id="table">
+                <table class="table table-bordered border-dark p-5">
+                    <thead>
+                    <th class= "table-dark"></th>
+                    <th class= "table-dark">Events statistics</th>
+                    <th class= "table-dark"></th>
+
+                    <tr class="table-secondary">
+                    <td>Event with the highest percentage of attendance</td>
+                    <td>Event with the lowest percentage of attendance</td>
+                    <td>Event with larger capacity</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                    <td>{{pastEventsOrdenados[0].name}}:  {{pastEventsOrdenados[0].porcentaje}}%</td>
+                    <td>{{pastEventsOrdenados[pastEventsOrdenados.length - 1].name}}:  {{pastEventsOrdenados[pastEventsOrdenados.length - 1].porcentaje}}%</td>
+                    <td>{{capacity[0].name}}:  {{capacity[0].capacity}} </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="tableUp">
+                <table class="table table-bordered border-dark p-5">
+                    <thead>
+                    <th class= "table-dark">Upcoming events statistics by category</th>
+                    <th class= "table-dark"></th>
+                    <th class= "table-dark"></th>
+                    <tr class="table-secondary">
+                    <td>Categories</td>
+                    <td>Estimated</td>
+                    <td>Percentage of estimated attendance</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr v-for="category in categoryUpcomingData">
+                    <td>{{category.category}}</td>
+                    <td>USD {{category.estimateRevenue}}</td>
+                    <td>{{category.porcentajeAttendace}}%</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="tablePast">
+                <table class="table table-bordered border-dark p-5 ">
+                    <thead>
+                    <th class= "table-dark">Past Events statistics by category</th>
+                    <th class= "table-dark"></th>
+                    <th class= "table-dark"></th>
+                    <tr class="table-secondary">
+                    <td>Categories</td>
+                    <td>Revenues</td>
+                    <td>Percentage of attendance</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr v-for="category in categoryPastData">
+                    <td>{{category.category}}</td>
+                    <td>USD {{category.revenue}}</td>
+                    <td>{{category.attendancePerc}}%</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+    <footer class="d-flex justify-content-between p-5">
+        <div class="redes">
+            <a href="www.instagram.com"><img src="./image/ig.png" alt="logoig" width="30"></a>
+            <a href="www.facebook.com"><img src="./image/fb.png" alt="logofb" width="30" ></a>
+            <a href="tel:+"><img src="./image/wapp.png" alt="logowapp" width="40"></a>
+        </div>
+        <h3>Cohort 44</h3>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./app.js"></script>
+</body>
+</html>

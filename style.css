@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 2rem;
+    background-color: rgb(237, 235, 235);
+}
+.navBar a{
+    text-decoration: none;
+    border: 0.2rem solid rgba(247, 6, 127, 0.489);
+    padding: .7rem;
+    color: rgb(255, 2, 129);
+    border-radius: .7rem;
+    background-color: rgb(237, 235, 235);
+    font-weight: bolder;
+}
+h1{
+    border: .1rem solid black;
+    margin: 0!important;
+    background-image: url(./image/background.jpeg);
+}
+footer{
+    border: .1rem solid black;
+    background-color:  rgb(237, 235, 235);
+}
+main{
+    background-color:  rgb(237, 235, 235);
+    min-height: 75vh;
+}
+
+@media only screen and (max-width: 768px){
+    main{
+        height: 100%;
+    } 
+    .navBar{
+        display: flex;
+        flex-direction: column;
+    }
+    nav{
+        align-items: center;
+    }
+    .navDos{
+        flex-direction: column;
+    }
+}
